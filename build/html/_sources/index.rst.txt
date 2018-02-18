@@ -13,3 +13,4 @@ WnCC Journal
    portals/portals
    wiki/wiki
    website/website
+   server/server

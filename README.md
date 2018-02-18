@@ -4,7 +4,18 @@ A documentation of all the assets of WnCC and how to set them up. It can useful 
 
 ## Install Python and Sphinx
 Install Python, the version I am using while writing this documentation is 2.7.10. You can use Python3 as well, there won't be any issues. 
-[Sphinx](http://www.sphinx-doc.org/en/stable/) is a tool that makes it easy to create intelligent and beautiful documentation. To install it via pip 
+[Sphinx](http://www.sphinx-doc.org/en/stable/) is a tool that makes it easy to create intelligent and beautiful documentation. 
+
+The best way to install all these requirements would be to create a virtual environment (call it `journalenv` for the sake of keeping it readily in .gitignore) and simply do a 
+
+```
+source journalenv/bin/activate
+pip install -r requirements.txt
+```
+
+**OR**
+
+Install it separately via pip 
 
 `pip install sphinx sphinx-autobuild`
 
@@ -12,19 +23,17 @@ The theme used here is `sphinx_rtd_theme` install it by running
 
 `pip install sphinx_rtd_theme`
 
-The best way to install all these requirements would be to create a virtual environment and simply do a 
 
-`pip -r install requirements.txt`
 
 ## Build
 
 Running the server for live-editing: `sphinx-autobuild source build/html` then open http://127.0.0.1:8000/ in your browser.
 
-Build the page: `sphinx-build -b html source build`
+Just build the website: `sphinx-build -b html source build`
 
 ## Content
 
-You write all your content in the `source` directory in `.rst` files which stands for ReStructuredText. As far as directory structure is concerened it currently look like this
+You write all your content in the `source` directory in `.rst` files which stands for **R**e**S**tructured**T**ext. As far as directory structure is concerened it should look something like this
 
 ```
 .

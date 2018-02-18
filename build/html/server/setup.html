@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Let’s Encrypt &mdash; WnCC Journal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="WnCC Journal  documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> WnCC Journal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../portals/portals.html">Portals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/wiki.html">Wiki</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../website/website.html">Website</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WnCC Journal</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Let’s Encrypt</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/server/setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="let-s-encrypt">
+<h1>Let’s Encrypt<a class="headerlink" href="#let-s-encrypt" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>We’ll use the automatic certificate renewal bot from <a class="reference external" href="https://letsencrypt.org/">LetsEncypt</a>. Download the certbot tool from the <a class="reference external" href="https://certbot.eff.org/">official website</a>. For CentOS use <a class="reference external" href="https://certbot.eff.org/#centos6-apache">this link</a>.</p>
+<p>Follow the instructions given on that <a class="reference external" href="https://certbot.eff.org/#centos6-apache">website</a>.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>To use the certbot, simply open the directory where you’ve downloaded the certbot-auto script and execute it using <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">./certbot-auto</span></code></p>
+<p>It would bring up an interactive interface allowing you to choose which domain you want to set up an SSL certificate for.</p>
+<p><code class="docutils literal"><span class="pre">`</span>
+<span class="pre">Which</span> <span class="pre">names</span> <span class="pre">would</span> <span class="pre">you</span> <span class="pre">like</span> <span class="pre">to</span> <span class="pre">activate</span> <span class="pre">HTTPS</span> <span class="pre">for?</span>
+<span class="pre">-------------------------------------------------------------------------------</span>
+<span class="pre">1:</span> <span class="pre">iusms.in</span>
+<span class="pre">2:</span> <span class="pre">www.iusms.in</span>
+<span class="pre">3:</span> <span class="pre">wncc-iitb.org</span>
+<span class="pre">4:</span> <span class="pre">dsd.wncc-iitb.org</span>
+<span class="pre">5:</span> <span class="pre">www.dsd.wncc-iitb.org</span>
+<span class="pre">6:</span> <span class="pre">hooks.wncc-iitb.org</span>
+<span class="pre">7:</span> <span class="pre">www.hooks.wncc-iitb.org</span>
+<span class="pre">8:</span> <span class="pre">journal.wncc-iitb.org</span>
+<span class="pre">9:</span> <span class="pre">www.journal.wncc-iitb.org</span>
+<span class="pre">10:</span> <span class="pre">lendit.wncc-iitb.org</span>
+<span class="pre">11:</span> <span class="pre">noticeboard.wncc-iitb.org</span>
+<span class="pre">12:</span> <span class="pre">www.noticeboard.wncc-iitb.org</span>
+<span class="pre">13:</span> <span class="pre">portals.wncc-iitb.org</span>
+<span class="pre">14:</span> <span class="pre">www.portals.wncc-iitb.org</span>
+<span class="pre">15:</span> <span class="pre">resources.wncc-iitb.org</span>
+<span class="pre">16:</span> <span class="pre">www.resources.wncc-iitb.org</span>
+<span class="pre">17:</span> <span class="pre">www.wncc-iitb.org</span>
+<span class="pre">-------------------------------------------------------------------------------</span>
+<span class="pre">Select</span> <span class="pre">the</span> <span class="pre">appropriate</span> <span class="pre">numbers</span> <span class="pre">separated</span> <span class="pre">by</span> <span class="pre">commas</span> <span class="pre">and/or</span> <span class="pre">spaces,</span> <span class="pre">or</span> <span class="pre">leave</span> <span class="pre">input</span>
+<span class="pre">blank</span> <span class="pre">to</span> <span class="pre">select</span> <span class="pre">all</span> <span class="pre">options</span> <span class="pre">shown</span> <span class="pre">(Enter</span> <span class="pre">'c'</span> <span class="pre">to</span> <span class="pre">cancel):</span>
+<span class="pre">`</span></code></p>
+<p>Select the options, and wait for the certbot to do its magic</p>
+</div>
+<div class="section" id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<p>Yes, we do that too.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, WnCC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

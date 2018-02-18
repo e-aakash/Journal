@@ -1,0 +1,10 @@
+Server
+======
+
+Setup on Server and Apache
+--------------------------
+Todo
+
+Dos and Don'ts
+--------------
+Lol
