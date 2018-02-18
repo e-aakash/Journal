@@ -24,6 +24,14 @@ How to run?
 
 **Background Process** --- To fork and create a background process that logs all output in a desired file, use this-
 
+``sudo nohup sudo ruby hook.rb -o 0.0.0.0 -p 1981 >>/home/nihal/hooklog.txt &``
+
+**Explanation**-
+nohup-
+port-
+log-
+forking-
+
 Logging
 ----
 The logs are all saved to the file- 
