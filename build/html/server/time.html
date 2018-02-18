@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Server &mdash; WnCC Journal  documentation</title>
+  <title>Time &mdash; WnCC Journal  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="WnCC Journal  documentation" href="../index.html"/>
-        <link rel="next" title="Let’s Encrypt" href="letsencrypt.html"/>
-        <link rel="prev" title="Server" href="../website/server.html"/> 
+        <link rel="up" title="Server" href="server.html"/>
+        <link rel="prev" title="Hooks" href="hooks.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -91,10 +91,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../portals/portals.html">Portals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wiki/wiki.html">Wiki</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../website/website.html">Website</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Server</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="server.html">Server</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="letsencrypt.html">Let’s Encrypt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="time.html">Time</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-timezone">Configure timezone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-ntp">Enable NTP</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -141,13 +145,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Server</li>
+          <li><a href="server.html">Server</a> &raquo;</li>
+        
+      <li>Time</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/server/server.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/server/time.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -160,32 +166,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="server">
-<h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="letsencrypt.html">Let’s Encrypt</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="letsencrypt.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="letsencrypt.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="letsencrypt.html#renew">Renew</a></li>
-<li class="toctree-l2"><a class="reference internal" href="letsencrypt.html#debugging">Debugging</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="hooks.html">Hooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html#what-are-hooks">What are hooks?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html#where-do-we-keep-them">Where do we keep them?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html#hooks-we-have">Hooks we have</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html#how-to-run">How to run?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html#logging">Logging</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="time.html">Time</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="time.html#configure-timezone">Configure timezone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="time.html#enable-ntp">Enable NTP</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="time">
+<h1>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configure-timezone">
+<h2>Configure timezone<a class="headerlink" href="#configure-timezone" title="Permalink to this headline">¶</a></h2>
+<p>Run <code class="docutils literal"><span class="pre">date</span></code> to see what time and timezone is set.</p>
+<p>To set timezone to IST, do the following-</p>
+<div class="highlight-linux"><div class="highlight"><pre><span></span>rm -rf /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+</pre></div>
+</div>
+<p>Next, we want to write the system time info into the hardware clock.</p>
+<p>Open up the hardware clock config- <code class="docutils literal"><span class="pre">vi</span> <span class="pre">/etc/sysconfig/clock</span></code>, and write the below lines into the file.</p>
+<div class="highlight-linux"><div class="highlight"><pre><span></span>ZONE=&quot;Asia/Shanghai&quot;
+UTC=false
+ARC=false
+</pre></div>
+</div>
+<p>Save and quit. Run <code class="docutils literal"><span class="pre">hwclock</span> <span class="pre">--systohc</span> <span class="pre">--localtime</span></code>.</p>
+<p>Check if the change has reflected, by running <code class="docutils literal"><span class="pre">hwclock</span></code>.</p>
+</div>
+<div class="section" id="enable-ntp">
+<h2>Enable NTP<a class="headerlink" href="#enable-ntp" title="Permalink to this headline">¶</a></h2>
+<p>To enable NTP to automatically update the time, follow the below steps-</p>
+<div class="highlight-linux"><div class="highlight"><pre><span></span>yum install ntp
+sudo chkconfig ntpd on
+sudo ntpdate pool.ntp.org
+sudo service ntpd start
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -199,10 +208,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="letsencrypt.html" class="btn btn-neutral float-right" title="Let’s Encrypt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../website/server.html" class="btn btn-neutral" title="Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="hooks.html" class="btn btn-neutral" title="Hooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
