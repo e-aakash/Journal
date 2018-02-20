@@ -1,5 +1,5 @@
 Server
-====
+======
 
 .. toctree::
    :maxdepth: 4

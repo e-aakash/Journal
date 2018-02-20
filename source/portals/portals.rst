@@ -6,7 +6,6 @@ Portals
    :caption: Contents:
 
    django
-   server
    templates
 
 

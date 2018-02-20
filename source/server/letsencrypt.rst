@@ -1,22 +1,22 @@
 Let's Encrypt
-=====
+=============
 
 Setup
-----
+-----
 We'll use the automatic certificate renewal bot from `LetsEncypt <https://letsencrypt.org/>`_. Download the certbot tool from the `official website <https://certbot.eff.org/>`_. For CentOS use `this link <https://certbot.eff.org/#centos6-apache>`_. 
 
 Follow the instructions given on that `website <https://certbot.eff.org/#centos6-apache>`_.
 
 
 Usage
-----
+-----
 To use the certbot, simply open the directory where you've downloaded the certbot-auto script and execute it using ``sudo ./certbot-auto``
 
 It would bring up an interactive interface allowing you to choose which domain you want to set up an SSL certificate for.
 
 
 
-.. code-block:: linux
+.. code-block:: bash
 
 	Which names would you like to activate HTTPS for?
 	-------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ Select the options, and wait for the certbot to do its magic.
 
 
 Renew
-----
+-----
 To renew the certificates, simply run ``sudo ./certbot-auto renew``. The certbot will do it's thing. 
 
 This can be set as a cronjob to run `every month <https://crontab.guru/every-month>`_.
@@ -57,7 +57,7 @@ To open the crontab for the root user, type in ``sudo crontab -e``. This would o
 
 
 Debugging
-----
+---------
 
 **Change not reflecting** --- If you've made a change in the ``/etc/httpd/conf/httpd.conf`` file, it may not reflect in the https configuration that gets set in ``/etc/httpd/conf/httpd-le-ssl.conf``, even on attempting to create a new certificate. The solution is to edit the https configuration file manually.
 
