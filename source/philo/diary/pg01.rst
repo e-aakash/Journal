@@ -1,7 +1,7 @@
 Pages 1-1
 =========
 
-.. image:: /_static/images/pg01.jpg
+.. image:: https://resources.wncc-iitb.org/journal/images/pg01.jpg
     :width: 100%
     :alt: page 0-1
     :align: center

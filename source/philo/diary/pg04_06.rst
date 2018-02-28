@@ -1,17 +1,17 @@
 Pages 4-6
 =========
 
-.. image:: /_static/images/pg04.jpg
+.. image:: https://resources.wncc-iitb.org/journal/images/pg04.jpg
     :width: 100%
     :alt: page 0-4
     :align: center
 
-.. image:: /_static/images/pg05.jpg
+.. image:: https://resources.wncc-iitb.org/journal/images/pg05.jpg
     :width: 100%
     :alt: page 0-5
     :align: center
 
-.. image:: /_static/images/pg06.jpg
+.. image:: https://resources.wncc-iitb.org/journal/images/pg06.jpg
     :width: 100%
     :alt: page 0-6
     :align: center
