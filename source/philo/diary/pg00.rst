@@ -1,0 +1,12 @@
+Pages 0-0
+=========
+
+.. image:: /_static/images/pg00.jpg
+    :width: 100%
+    :alt: page 0-0
+    :align: center
+
+.. image:: /_static/images/pg00_1.jpg
+    :width: 100%
+    :alt: page 0-0-1
+    :align: center

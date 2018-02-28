@@ -5,5 +5,8 @@ Excerpts from Diary
    :maxdepth: 4
    :caption: Contents:
 
-   notetoreader
+   pg00
+   pg01
+   pg02_03
+   pg04_06
 
