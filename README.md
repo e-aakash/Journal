@@ -31,6 +31,8 @@ Running the server for live-editing: `sphinx-autobuild source build/html` then o
 
 Just build the website: `sphinx-build -b html source build`
 
+If you have added a new section, or made a major change, build with: `sphinx-build -ab html source build`
+
 ## Content
 
 You write all your content in the `source` directory in `.rst` files which stands for **R**e**S**tructured**T**ext. As far as directory structure is concerened it should look something like this

@@ -14,3 +14,4 @@ WnCC Journal
    wiki/wiki
    website/website
    server/server
+   philo/philo
