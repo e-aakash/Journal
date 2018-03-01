@@ -1,0 +1,4 @@
+Why does this section exist?
+====
+
+It is natural to wonder why does this exist.
