@@ -178,9 +178,9 @@
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>To use the certbot, simply open the directory where you’ve downloaded the certbot-auto script and execute it using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">./certbot-auto</span></code></p>
+<p>To use the certbot, simply open the directory where you’ve downloaded the certbot-auto script and execute it using <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">./certbot-auto</span></code></p>
 <p>It would bring up an interactive interface allowing you to choose which domain you want to set up an SSL certificate for.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Which names would you like to activate HTTPS <span class="k">for</span>?
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Which names would you like to activate HTTPS <span class="k">for</span>?
 -------------------------------------------------------------------------------
 <span class="m">1</span>: iusms.in
 <span class="m">2</span>: www.iusms.in
@@ -208,15 +208,15 @@ blank to <span class="k">select</span> all options shown <span class="o">(</span
 </div>
 <div class="section" id="renew">
 <h2>Renew<a class="headerlink" href="#renew" title="Permalink to this headline">¶</a></h2>
-<p>To renew the certificates, simply run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">./certbot-auto</span> <span class="pre">renew</span></code>. The certbot will do it’s thing.</p>
+<p>To renew the certificates, simply run <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">./certbot-auto</span> <span class="pre">renew</span></code>. The certbot will do it’s thing.</p>
 <p>This can be set as a cronjob to run <a class="reference external" href="https://crontab.guru/every-month">every month</a>.</p>
-<p>To open the crontab for the root user, type in <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">crontab</span> <span class="pre">-e</span></code>. This would open up the crontab in vim. Insert the following line:</p>
-<p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">/home/nihal/certbot-auto</span> <span class="pre">renew</span></code></p>
+<p>To open the crontab for the root user, type in <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">crontab</span> <span class="pre">-e</span></code>. This would open up the crontab in vim. Insert the following line:</p>
+<p><code class="docutils literal"><span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">/home/nihal/certbot-auto</span> <span class="pre">renew</span></code></p>
 </div>
 <div class="section" id="debugging">
 <h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
-<p><strong>Change not reflecting</strong> — If you’ve made a change in the <code class="docutils literal notranslate"><span class="pre">/etc/httpd/conf/httpd.conf</span></code> file, it may not reflect in the https configuration that gets set in <code class="docutils literal notranslate"><span class="pre">/etc/httpd/conf/httpd-le-ssl.conf</span></code>, even on attempting to create a new certificate. The solution is to edit the https configuration file manually.</p>
-<p><strong>Certbot error</strong> — The certbot occassionaly gives an error saying that it has created the certificate but was unable to add it to apache config. To fix this open <code class="docutils literal notranslate"><span class="pre">/etc/httpd/conf/httpd-le-ssl.conf</span></code> yourself, look at a similar previous example website that has it’s config defined. Replicate the config, making changes wherever needed. Run the certbot again. There is a good chance that it would set up the config correctly now. If not, happy debugging!</p>
+<p><strong>Change not reflecting</strong> — If you’ve made a change in the <code class="docutils literal"><span class="pre">/etc/httpd/conf/httpd.conf</span></code> file, it may not reflect in the https configuration that gets set in <code class="docutils literal"><span class="pre">/etc/httpd/conf/httpd-le-ssl.conf</span></code>, even on attempting to create a new certificate. The solution is to edit the https configuration file manually.</p>
+<p><strong>Certbot error</strong> — The certbot occassionaly gives an error saying that it has created the certificate but was unable to add it to apache config. To fix this open <code class="docutils literal"><span class="pre">/etc/httpd/conf/httpd-le-ssl.conf</span></code> yourself, look at a similar previous example website that has it’s config defined. Replicate the config, making changes wherever needed. Run the certbot again. There is a good chance that it would set up the config correctly now. If not, happy debugging!</p>
 </div>
 </div>
 

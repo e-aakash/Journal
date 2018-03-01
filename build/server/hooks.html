@@ -178,7 +178,7 @@
 </div>
 <div class="section" id="where-do-we-keep-them">
 <h2>Where do we keep them?<a class="headerlink" href="#where-do-we-keep-them" title="Permalink to this headline">¶</a></h2>
-<p>The hook.rb script resides in <code class="docutils literal notranslate"><span class="pre">/var/www/</span></code>. The configurations for hooks can be found in the Github Repository’s settings page under the Webhooks tab from the left panel.</p>
+<p>The hook.rb script resides in <code class="docutils literal"><span class="pre">/var/www/</span></code>. The configurations for hooks can be found in the Github Repository’s settings page under the Webhooks tab from the left panel.</p>
 </div>
 <div class="section" id="hooks-we-have">
 <h2>Hooks we have<a class="headerlink" href="#hooks-we-have" title="Permalink to this headline">¶</a></h2>
@@ -192,7 +192,7 @@
 <h2>How to run?<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
 <p><strong>Test Run</strong> — It is recommended to do a test run before you set up the hook to run forever in the background.</p>
 <p><strong>Background Process</strong> — To fork and create a background process that logs all output in a desired file, use this-</p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nohup</span> <span class="pre">sudo</span> <span class="pre">ruby</span> <span class="pre">hook.rb</span> <span class="pre">-o</span> <span class="pre">0.0.0.0</span> <span class="pre">-p</span> <span class="pre">1981</span> <span class="pre">&gt;&gt;/home/nihal/hooklog.txt</span> <span class="pre">&amp;</span></code></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">nohup</span> <span class="pre">sudo</span> <span class="pre">ruby</span> <span class="pre">hook.rb</span> <span class="pre">-o</span> <span class="pre">0.0.0.0</span> <span class="pre">-p</span> <span class="pre">1981</span> <span class="pre">&gt;&gt;/home/nihal/hooklog.txt</span> <span class="pre">&amp;</span></code></p>
 <p><strong>Explanation</strong>-
 nohup-
 port-
