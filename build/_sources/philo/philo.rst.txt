@@ -7,4 +7,5 @@ Philosophy
 
    diary/diary
    why
+   decay
 
