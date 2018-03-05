@@ -1,0 +1,12 @@
+Pages 0-0
+=========
+
+.. image:: https://resources.wncc-iitb.org/journal/images/pg00.jpg
+    :width: 100%
+    :alt: page 0-0
+    :align: center
+
+.. image:: https://resources.wncc-iitb.org/journal/images/pg00_1.jpg
+    :width: 100%
+    :alt: page 0-0-1
+    :align: center
