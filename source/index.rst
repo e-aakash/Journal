@@ -6,6 +6,8 @@
 WnCC Journal
 ========================================
 
+*Verba volant scripta manent*
+
 .. toctree::
    :maxdepth: 4
    :caption: Contents:
@@ -15,3 +17,4 @@ WnCC Journal
    website/website
    server/server
    philo/philo
+
