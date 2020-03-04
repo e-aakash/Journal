@@ -172,26 +172,26 @@
 <h1>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="configure-timezone">
 <h2>Configure timezone<a class="headerlink" href="#configure-timezone" title="Permalink to this headline">¶</a></h2>
-<p>Run <code class="docutils literal notranslate"><span class="pre">date</span></code> to see what time and timezone is set.</p>
+<p>Run <code class="docutils literal"><span class="pre">date</span></code> to see what time and timezone is set.</p>
 <p>To set timezone to IST, do the following-</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -rf /etc/localtime
+<div class="highlight-bash"><div class="highlight"><pre><span></span>rm -rf /etc/localtime
 ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 </pre></div>
 </div>
 <p>Next, we want to write the system time info into the hardware clock.</p>
-<p>Open up the hardware clock config- <code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">/etc/sysconfig/clock</span></code>, and write the below lines into the file.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ZONE</span><span class="o">=</span><span class="s2">&quot;Asia/Shanghai&quot;</span>
+<p>Open up the hardware clock config- <code class="docutils literal"><span class="pre">vi</span> <span class="pre">/etc/sysconfig/clock</span></code>, and write the below lines into the file.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ZONE</span><span class="o">=</span><span class="s2">&quot;Asia/Shanghai&quot;</span>
 <span class="nv">UTC</span><span class="o">=</span><span class="nb">false</span>
 <span class="nv">ARC</span><span class="o">=</span><span class="nb">false</span>
 </pre></div>
 </div>
-<p>Save and quit. Run <code class="docutils literal notranslate"><span class="pre">hwclock</span> <span class="pre">--systohc</span> <span class="pre">--localtime</span></code>.</p>
-<p>Check if the change has reflected, by running <code class="docutils literal notranslate"><span class="pre">hwclock</span></code>.</p>
+<p>Save and quit. Run <code class="docutils literal"><span class="pre">hwclock</span> <span class="pre">--systohc</span> <span class="pre">--localtime</span></code>.</p>
+<p>Check if the change has reflected, by running <code class="docutils literal"><span class="pre">hwclock</span></code>.</p>
 </div>
 <div class="section" id="enable-ntp">
 <h2>Enable NTP<a class="headerlink" href="#enable-ntp" title="Permalink to this headline">¶</a></h2>
 <p>To enable NTP to automatically update the time, follow the below steps-</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum install ntp
+<div class="highlight-bash"><div class="highlight"><pre><span></span>yum install ntp
 sudo chkconfig ntpd on
 sudo ntpdate pool.ntp.org
 sudo service ntpd start

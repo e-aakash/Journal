@@ -172,7 +172,22 @@
 <h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="apache">
 <h2>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h2>
-<p>Todo</p>
+<p>Apache is a web server that is used to serve websites from a machine.</p>
+<p>Apache is available within CentOS’s default software repositories, which means you can install it with the <cite>yum</cite> package manager.</p>
+<p>Update the local Apache httpd package index to reflect the latest upstream changes:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo yum update httpd
+</pre></div>
+</div>
+<p>Once the packages are updated, install the Apache package:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo yum install httpd
+</pre></div>
+</div>
+<p><strong>Checking your Web Server:</strong></p>
+<p>Apache does not automatically start on CentOS once the installation completes. You will need to start the Apache process manually:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo systemctl start httpd
+</pre></div>
+</div>
+<p>The default configuration for Apache will allow your server to host a single website. If you plan on hosting multiple domains on your server, you will need to configure virtual hosts on your Apache web server.</p>
 </div>
 <div class="section" id="configuring">
 <h2>Configuring<a class="headerlink" href="#configuring" title="Permalink to this headline">¶</a></h2>
